@@ -42,5 +42,79 @@ public class ApplianceManager {
                     }
                     
                 
-                }                        
+    }
+    public void updateAppliance(ArrayList<Appliance> applianceList, Scanner scanner ){
+        
+        if (applianceList.isEmpty()){
+            System.out.println("No appliances available to update");
+            return;
+        }
+        
+        System.out.println("\n=================================================");
+        System.out.println("              ENERGY USAGE RECORD");
+        System.out.println("=================================================");
+        for(int i=0;
+            i<applianceList.size();
+            i++
+        ){
+            System.out.println((i+1) + ". " + applianceList.get(i).getName());
+        }
+
+        System.out.print("Enter appliance number to update: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice<1 || choice>applianceList.size()) {
+            System.out.println("Invalid appliance number");
+            return;
+        }
+
+        Appliance appliance = applianceList.get(choice - 1);
+        // because first appliances index is 0
+
+         System.out.print("Enter new appliance name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter new power rating (W): ");
+        double power = scanner.nextDouble();
+
+        System.out.print("Enter new usage hours: ");
+        double hours = scanner.nextDouble();
+        scanner.nextLine();
+
+        appliance.setName(name);
+        appliance.setPowerRating(power);
+        appliance.setUsageHours(hours);
+    }
+    
+    public void deleteAppliance(ArrayList<Appliance> applianceList, Scanner scanner){
+    
+        if(applianceList.isEmpty()){
+            System.out.println("No appliances available to update");
+            return;
+        }
+
+        System.out.println("\n=================================================");
+        System.out.println("              ENERGY USAGE RECORD");
+        System.out.println("=================================================");
+        for (int i = 0;
+            i < applianceList.size();
+            i++
+        ){
+            System.out.println((i + 1) + ". " + applianceList.get(i).getName());
+        }
+
+        System.out.print("Enter appliance number to delete: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice<1 || choice>applianceList.size()) {
+            System.out.println("Invalid appliance number");
+            return;
+        }
+
+        Appliance removedAppliance = applianceList.remove(choice - 1);
+
+        System.out.println("✅ " + removedAppliance.getName() + " has been deleted successfully.");
+    }                             
 }
