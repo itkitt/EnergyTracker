@@ -4,6 +4,7 @@ public class LightAppliance extends Appliance{
         super(name, powerRating, usageHours);
     }
 
+    // no extra rules needed, so call the parent method.
     @Override
     public double calculateEnergyConsumption(){
         return super.calculateEnergyConsumption();

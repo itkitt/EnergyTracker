@@ -1,3 +1,4 @@
+// Create a new appliance and set up its basic details
 public class Appliance {
     private String name;
     private double powerRating;
@@ -14,8 +15,9 @@ public class Appliance {
         return name; 
     }
 
+    // Check if the user typed nothing or just spaces. 
+    // If so, give it a default name so the program doesn't break.
     public void setName(String name){
-    // updata value
         if (name == null || name.trim().isEmpty()) {
             this.name = "Unknown Appliance";
         } else {
@@ -27,6 +29,8 @@ public class Appliance {
         return powerRating; 
     }
     
+    // power cannot be a negative number. 
+    // if the user types a negative number, force it to 0 to be safe.
     public void setPowerRating(double powerRating){
         if (powerRating >= 0){
             this.powerRating = powerRating;
@@ -54,4 +58,5 @@ public class Appliance {
     public double calculateEnergyConsumption(){
         return (powerRating * usageHours) / 1000.0;
     }
+    // Math formula: (Watts * Hours) / 1000 to get kWh (kilowatt-hours)
 }
