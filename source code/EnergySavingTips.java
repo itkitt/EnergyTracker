@@ -3,7 +3,7 @@ public class EnergySavingTips
     
     public void displayTips() {
         System.out.println("\n=========================================================================");
-        System.out.println("       ENERGY SAVING TIPS (SDG 7 Goals)       ");
+        System.out.println("                  ENERGY SAVING TIPS (SDG 7 Goals)       ");
         System.out.println("=========================================================================");
         System.out.println("1. Turn off and unplug idle appliances");
         System.out.println("   (Leaving them plugged in consumes standby power!)");
