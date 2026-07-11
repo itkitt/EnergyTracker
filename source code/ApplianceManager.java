@@ -85,10 +85,13 @@ public class ApplianceManager {
         System.out.print("Enter new usage hours: ");
         double hours = scanner.nextDouble();
         scanner.nextLine();
-
+        
+        System.out.println(appliance.getName() + " has been updated successfully!!");
+        
         appliance.setName(name);
         appliance.setPowerRating(power);
         appliance.setUsageHours(hours);
+        ;
     }
     
     public void deleteAppliance(ArrayList<Appliance> applianceList, Scanner scanner){

@@ -32,7 +32,7 @@ public class SummaryEnergyReport {
         double estimatedCost = totalEnergy * COST_PER_KWH;
 
         System.out.println("\n=================================================");
-        System.out.println("            📊 SUMMARY ENERGY REPORT             ");
+        System.out.println("            SUMMARY ENERGY REPORT             ");
         System.out.println("=================================================");
         System.out.printf("Total Energy Used        : %.2f kWh/day\n", totalEnergy);
         System.out.printf("Average Usage per Device : %.2f kWh/day\n", averageEnergy);
